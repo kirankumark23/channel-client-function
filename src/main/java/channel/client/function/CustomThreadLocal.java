@@ -2,10 +2,13 @@ package channel.client.function;
 
 import java.util.HashMap;
 import java.util.Map;
+
+import channel.client.dao.ServerDao;
  
 public class CustomThreadLocal {
  
     private static Map<Thread, Map<String, Object>> threadMap = new HashMap<Thread, Map<String, Object>>();
+    private static ServerDao mServerDao;
  
     public static void add(String pKey, Object pObject) {
     	Map<String, Object> valueMap = threadMap.get(Thread.currentThread());
@@ -27,5 +30,13 @@ public class CustomThreadLocal {
         
     	return null;
     }
+
+	public static ServerDao getServerDao() {
+		return mServerDao;
+	}
+
+	public static void setServerDao(ServerDao pServerDao) {
+		mServerDao = pServerDao;
+	}
 
 }
