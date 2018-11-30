@@ -4,11 +4,13 @@ import java.util.HashMap;
 import java.util.Map;
 
 import channel.client.dao.ServerDao;
+import channel.client.function.common.CommonUtils;
  
 public class CustomThreadLocal {
  
     private static Map<Thread, Map<String, Object>> threadMap = new HashMap<Thread, Map<String, Object>>();
     private static ServerDao mServerDao;
+    private static CommonUtils mCommonUtils;
  
     public static void add(String pKey, Object pObject) {
     	Map<String, Object> valueMap = threadMap.get(Thread.currentThread());
@@ -37,6 +39,14 @@ public class CustomThreadLocal {
 
 	public static void setServerDao(ServerDao pServerDao) {
 		mServerDao = pServerDao;
+	}
+
+	public static CommonUtils getCommonUtils() {
+		return mCommonUtils;
+	}
+
+	public static void setCommonUtils(CommonUtils pCommonUtils) {
+		mCommonUtils = pCommonUtils;
 	}
 
 }
