@@ -18,4 +18,6 @@ public abstract class CommonUtils {
 	public abstract String getData(int pComplexStep);
 	public abstract Status getResultStatus(int pComplexStep);
 	public abstract Status getExecutionStatus(int pComplexStep);
+	
+	public abstract boolean checkMandate();
 }
