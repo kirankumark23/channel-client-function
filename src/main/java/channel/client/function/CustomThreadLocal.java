@@ -21,7 +21,7 @@ public class CustomThreadLocal {
         threadMap.put(Thread.currentThread(), valueMap);
     }
  
-    public static void remove(Object object) {
+    public static void remove() {
         threadMap.remove(Thread.currentThread());
     }
  

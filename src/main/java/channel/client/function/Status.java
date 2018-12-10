@@ -7,5 +7,7 @@ public enum Status {
 	IN_PROGRESS,
 	COMLETED,
 	SUCCESS,
-	ERROR
+	ERROR,
+	
+	DECLINED
 }
